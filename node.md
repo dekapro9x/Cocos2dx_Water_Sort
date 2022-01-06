@@ -1,0 +1,1 @@
+Khởi tạo projects : cocos new WaterSortGame -p WaterSortGame -l js -d Cocos2dx
