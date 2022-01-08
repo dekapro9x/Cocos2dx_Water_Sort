@@ -3,7 +3,8 @@ var res = {
     IntroGame_Background_png:"res/IntroGameBg.jpg",
     ThreeCupIntroGame :"res/ThreeCup.jpeg",
     ButtonStart_Game :"res/ButtonStart.png",
-    LoadingProcess_Game:"res/LoadingProcess.png"
+    LoadingProcess_Game:"res/LoadingProcess.png",
+    LoadingText_Game : "res/LoadingText.png"
 };
 var g_resources = [];
 for (var i in res) {

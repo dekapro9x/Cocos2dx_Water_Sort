@@ -12,10 +12,19 @@ var LoadingProcessStartGameLayer = cc.Layer.extend({
         this.BackGroundImg.attr({
             x: size.width / 2,
             y: size.height / 2,
-            scaleX: 0.4,
-            scaleY: 0.4
+            scaleX: scaleImgBackGroundGame,
+            scaleY: scaleImgBackGroundGame
         });
         this.addChild(this.BackGroundImg, 0);
+        //Thêm chữ Loading:
+        this.LoadingTextImg = new cc.Sprite(res.LoadingText_Game);
+        this.LoadingTextImg.attr({
+            x: size.width / 2,
+            y: size.height / 2 + 50,
+            scaleX: scaleImgLoadingProcess,
+            scaleY: scaleImgLoadingProcess
+        });
+        this.addChild(this.LoadingTextImg, 0);
         //Thêm loadingBar:
         this.loadingBar = new ccui.LoadingBar();
         this.loadingBar.setName("LoadingBar");
@@ -32,8 +41,13 @@ var LoadingProcessStartGameLayer = cc.Layer.extend({
         this.count++;
         if (this.count > 100) {
             this.count = 0;
+            this.actionsChangeScene();
         }
         this.loadingBar.setPercent(this.count);
+    },
+    //Chuyển cảnh lựa chọn bắt đầu chơi game:
+    actionsChangeScene: function () {
+        cc.director.runScene(new StarGameScene());
     }
 });
 

@@ -1,20 +1,22 @@
 {
     "project_type": "javascript",
-
-    "debugMode" : 1,
-    "showFPS" : true,
-    "frameRate" : 60,
-    "noCache" : false,
-    "id" : "gameCanvas",
-    "renderMode" : 0,
-    "engineDir":"frameworks/cocos2d-html5",
-
-    "modules" : ["cocos2d","extensions"],
-
-    "jsList" : [
+    "debugMode": 1,
+    "showFPS": true,
+    "frameRate": 60,
+    "noCache": false,
+    "id": "gameCanvas",
+    "renderMode": 0,
+    "engineDir": "frameworks/cocos2d-html5",
+    "modules": [
+        "cocos2d",
+        "extensions"
+    ],
+    "jsList": [
         "src/resource.js",
         "src/app.js",
+        "src/configGame/index.js",
         "src/WaterSortGame/IntroGame.js",
-        "src/WaterSortGame/LoadingProcess.js"
+        "src/WaterSortGame/LoadingProcess.js",
+        "src/WaterSortGame/SceneStarGame.js"
     ]
 }

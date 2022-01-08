@@ -10,8 +10,8 @@ var IntroLayer = cc.Layer.extend({
         this.BackGroundImg.attr({
             x: size.width / 2,
             y: size.height / 2,
-            scaleX: 0.4,
-            scaleY: 0.4
+            scaleX: scaleImgBackGroundGame,
+            scaleY: scaleImgBackGroundGame
         });
         this.addChild(this.BackGroundImg, 0);
         //Ảnh 3 cốc:
@@ -19,8 +19,8 @@ var IntroLayer = cc.Layer.extend({
         this.BackGroundImg.attr({
             x: size.width / 2,
             y: size.height / 2 + 130,
-            scaleX: 0.4,
-            scaleY: 0.4
+            scaleX: scaleImgBackGroundGame,
+            scaleY: scaleImgBackGroundGame
         });
         this.addChild(this.BackGroundImg, 0);
         //Nút bắt đầu game:
@@ -58,8 +58,8 @@ var IntroLayer = cc.Layer.extend({
 var IntroGameScene = cc.Scene.extend({
     onEnter: function () {
         this._super();
-        const layer = new IntroLayer();
-        this.addChild(layer);
+        const layerIntro = new IntroLayer();
+        this.addChild(layerIntro);
     }
 });
 
