@@ -23,34 +23,37 @@ var IntroLayer = cc.Layer.extend({
             scaleY: 0.4
         });
         this.addChild(this.BackGroundImg, 0);
+        //Nút bắt đầu game:
+        this.buttonStartGame = new ccui.Button();
+        this.buttonStartGame.loadTextures(res.ButtonStart_Game);
+        this.buttonStartGame.x = size.width / 2;
+        this.buttonStartGame.y = size.height / 2;
+        this.buttonStartGame.scaleX = 0.2;
+        this.buttonStartGame.scaleY = 0.2;
+        this.addChild(this.buttonStartGame, 0);
+        this.buttonStartGame.addTouchEventListener(this.pressStartGame, this);
         //Text giới thiệu Game:
         const textIntroGame = new cc.LabelTTF("WATER SORT PUZZLE COLOR SORTING GAME", "Arial", 16);
         textIntroGame.x = size.width / 2;
         textIntroGame.y = 30;
         this.addChild(textIntroGame, 5);
-        //Nút bấm bắt đầu game:
     },
-});
-
-var MapScrollView = cc.Layer.extend({
-    sprite: null,
-    ctor: function () {
-        this._super();
-        var size = cc.winSize;
-        var scrollView = new ccui.ScrollView();
-        scrollView.setDirection(ccui.ScrollView.DIR_VERTICAL);
-        scrollView.setTouchEnabled(true);
-        scrollView.setBounceEnabled(true);
-        scrollView.setBackGroundColorType(ccui.Layout.BG_COLOR_SOLID);
-        scrollView.setBackGroundColor(cc.color(255, 255, 255));
-        scrollView.setBackGroundImageScale9Enabled(true);
-        scrollView.setContentSize(cc.size(720, 1280));
-        scrollView.setInnerContainerSize(cc.size(720, (1280 * 2)));
-        scrollView.setAnchorPoint(cc.p(0.5, 0.5));
-        scrollView.setPosition(cc.p(360, 640));
-        this.addChild(scrollView);
+    pressStartGame: function (sender, type) {
+        switch (type) {
+            case 0:
+                break;
+            case 1:
+                break;
+            case 2:
+                this.actionsChangeScene();
+                break;
+        }
+    },
+    //Chuyển cảnh:
+    actionsChangeScene: function () {
+        cc.director.runScene(new LoadingProcessStartGameLayer());
     }
-})
+});
 
 var IntroGameScene = cc.Scene.extend({
     onEnter: function () {
