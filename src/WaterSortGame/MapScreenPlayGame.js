@@ -1,8 +1,9 @@
-//Danh sách màn chơi:
+//Màn hình lựa chọn màn chơi/lerver chơi.
 var MapLeverPlayGameLayer = cc.Layer.extend({
     sprite: null,
     loadingBar: null,
     ctor: function (elementMenuClick) {
+        console.log("Step 4: Map Lever Play Game.")
         this._super();
         const size = cc.winSize;
         //Thêm ảnh nền giới thiệu game:
@@ -14,6 +15,16 @@ var MapLeverPlayGameLayer = cc.Layer.extend({
             scaleY: scaleImgBackGroundGame
         });
         this.addChild(this.BackGroundImg, 0);
+        //Nút quay lại màn hình trước:
+        this.goBackScene = new ccui.Button();
+        this.goBackScene.loadTextures(res.GoBackScene_Game);
+        this.goBackScene.setName("GoBackScene");
+        this.goBackScene.x = 320;
+        this.goBackScene.y = 600;
+        this.goBackScene.scaleX = 0.1;
+        this.goBackScene.scaleY = 0.1;
+        this.addChild(this.goBackScene, 0);
+        this.goBackScene.addTouchEventListener(this.goBackScreen, this);
         //Hiển thị danh sách menu chọn màn chơi:
         const { _name } = elementMenuClick;
         this.screenMap(_name);
@@ -46,6 +57,9 @@ var MapLeverPlayGameLayer = cc.Layer.extend({
     },
     pressPlayGame: function () {
         cc.director.pushScene(new ScreenPlayGameScene());
+    },
+    goBackScreen: function(){
+        cc.director.runScene(new LoadingProcessStartGameLayer());
     }
 });
 

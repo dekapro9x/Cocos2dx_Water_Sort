@@ -1,10 +1,11 @@
 
-
+//Step 2: Loading tiến trình đợi game load data.
 var LoadingProcessStartGameLayer = cc.Layer.extend({
     sprite: null,
     count: 0,
     loadingBar: null,
     ctor: function () {
+        console.log("Step 2: LoadingProcess.");
         this._super();
         const size = cc.winSize;
         //Thêm ảnh nền giới thiệu game:

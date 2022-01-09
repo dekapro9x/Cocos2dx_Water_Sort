@@ -1,8 +1,9 @@
 
-
+//Step 1: Màn hình giới thiệu Game.
 var IntroLayer = cc.Layer.extend({
     sprite: null,
     ctor: function () {
+        console.log("Step 1: IntroLayer.");
         this._super();
         const size = cc.winSize;
         //Thêm ảnh nền giới thiệu game:

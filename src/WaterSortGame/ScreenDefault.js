@@ -1,5 +1,5 @@
 
-
+//Màn hình mặc định tạo cảnh cơ bản:
 var ScreenDefaultLayer = cc.Layer.extend({
     sprite: null,
     loadingBar: null,

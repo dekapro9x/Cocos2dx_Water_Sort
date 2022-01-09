@@ -1,8 +1,10 @@
+//Màn hình lựa chọn độ khó game:
 var LeverDifficultySelectLayer = cc.Layer.extend({
     sprite: null,
     loadingBar: null,
     rankGameSelect: rankDifficultMenu,
     ctor: function () {
+        console.log("Step 3: Lever Difficulty Select.");
         this._super();
         const size = cc.winSize;
         //Thêm ảnh nền giới thiệu game:

@@ -1,7 +1,9 @@
+//Màn hình chơi game:
 var ScreenPlayGameLayer = cc.Layer.extend({
     sprite: null,
     loadingBar: null,
     ctor: function () {
+        console.log("Step 5: Screen Play Game.");
         this._super();
         const size = cc.winSize;
         //Thêm ảnh nền giới thiệu game:

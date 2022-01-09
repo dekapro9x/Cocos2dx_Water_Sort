@@ -1,5 +1,5 @@
 
-
+//Màn hình bắt đầu vào trò chơi:
 var SceneStarGameLayer = cc.Layer.extend({
     sprite: null,
     loadingBar: null,
