@@ -21,6 +21,6 @@
         "src/WaterSortGame/LoadingProcess.js",
         "src/WaterSortGame/SceneStarGame.js",
         "src/WaterSortGame/LeverDifficultySelect.js",
-        "src/WaterSortGame/MapLeverPlayGame.js"
+        "src/WaterSortGame/MapScreenPlayGame.js"
     ]
 }

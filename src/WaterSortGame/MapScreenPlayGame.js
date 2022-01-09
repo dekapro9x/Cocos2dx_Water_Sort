@@ -1,9 +1,9 @@
+//Danh sách màn chơi:
 var MapLeverPlayGameLayer = cc.Layer.extend({
     sprite: null,
     loadingBar: null,
-    ctor: function (ElementMenuClick) {
+    ctor: function (elementMenuClick) {
         this._super();
-        console.log("ElementMenuClick", ElementMenuClick);
         const size = cc.winSize;
         //Thêm ảnh nền giới thiệu game:
         this.BackGroundImg = new cc.Sprite(res.IntroGame_Background_png);
@@ -14,9 +14,26 @@ var MapLeverPlayGameLayer = cc.Layer.extend({
             scaleY: scaleImgBackGroundGame
         });
         this.addChild(this.BackGroundImg, 0);
+        //Hiển thị danh sách menu chọn màn chơi:
+        const { _name } = elementMenuClick;
+        this.screenMap(_name);
     },
-    menuMap:function(){
-
+    //Map danh sách màn chơi:
+    screenMap: function (keyMenu) {
+        var listScreen = [];
+        if (keyMenu == rankKey.easy) {
+            listScreen = MenuLeverEasy;
+        }
+        if (keyMenu == rankKey.nomal) {
+            listScreen = MenuLeverNormal;
+        }
+        if (keyMenu == rankKey.hard) {
+            listScreen = MenuLeverHard;
+        }
+        if (keyMenu == rankKey.expert) {
+            listScreen = MenuLeverEasy;
+        }
+        console.log("listScreen>>", listScreen);
     }
 });
 

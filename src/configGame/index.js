@@ -1,5 +1,11 @@
 var scaleImgBackGroundGame = 0.4;
 var scaleImgLoadingProcess = 0.3;
+var rankKey = {
+    easy:"Easy",
+    nomal:"Nomal",
+    hard:"Hard",
+    expert:"Expert"
+}
 var rankDifficultMenu = [{
     id: 1,
     lever: "Easy",
