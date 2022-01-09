@@ -20,6 +20,7 @@ var MapLeverPlayGameLayer = cc.Layer.extend({
     },
     //Map danh sách màn chơi:
     screenMap: function (keyMenu) {
+        const size = cc.winSize;
         var listScreen = [];
         if (keyMenu == rankKey.easy) {
             listScreen = MenuLeverEasy;
@@ -33,7 +34,18 @@ var MapLeverPlayGameLayer = cc.Layer.extend({
         if (keyMenu == rankKey.expert) {
             listScreen = MenuLeverEasy;
         }
-        console.log("listScreen>>", listScreen);
+        this.buttonHexaBtnPlay = new ccui.Button();
+        this.buttonHexaBtnPlay.loadTextures(res.HexaBtnPlay_Game);
+        this.buttonHexaBtnPlay.setName("HexaBtnPlay_Game")
+        this.buttonHexaBtnPlay.x = size.width / 2;
+        this.buttonHexaBtnPlay.y = size.height / 2;
+        this.buttonHexaBtnPlay.scaleX = 0.2;
+        this.buttonHexaBtnPlay.scaleY = 0.2;
+        this.addChild(this.buttonHexaBtnPlay, 0);
+        this.buttonHexaBtnPlay.addTouchEventListener(this.pressPlayGame, this);
+    },
+    pressPlayGame: function () {
+        cc.director.pushScene(new ScreenPlayGameScene());
     }
 });
 
