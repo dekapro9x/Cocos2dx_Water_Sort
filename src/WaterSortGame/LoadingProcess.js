@@ -26,7 +26,7 @@ var LoadingProcessStartGameLayer = cc.Layer.extend({
         });
         this.addChild(this.LoadingTextImg, 0);
         //Thêm loadingBar:
-        this.loadingBar = new ccui.LoadingBar();
+        this.loadingBar = new ccui.LoadingBar(); 
         this.loadingBar.setName("LoadingBar");
         this.loadingBar.loadTexture(res.LoadingProcess_Game);
         this.loadingBar.setPercent(0);
@@ -36,17 +36,16 @@ var LoadingProcessStartGameLayer = cc.Layer.extend({
         this.scheduleUpdate();
         return true;
     },
-    update: function (dt) {
-        console.log("Update Runn")
+    update: function () {
         this.count++;
         if (this.count > 100) {
             this.count = 0;
-            this.actionsChangeScene();
+            this.actionsChangeSceneStartPlayGame();
         }
         this.loadingBar.setPercent(this.count);
     },
     //Chuyển cảnh lựa chọn bắt đầu chơi game:
-    actionsChangeScene: function () {
+    actionsChangeSceneStartPlayGame: function () {
         cc.director.runScene(new StarGameScene());
     }
 });

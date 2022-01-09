@@ -4,7 +4,11 @@ var res = {
     ThreeCupIntroGame :"res/ThreeCup.jpeg",
     ButtonStart_Game :"res/ButtonStart.png",
     LoadingProcess_Game:"res/LoadingProcess.png",
-    LoadingText_Game : "res/LoadingText.png"
+    LoadingText_Game : "res/LoadingText.png",
+    SceneStarImg_Game : "res/SceneStarGame.jpg",
+    IntroIconStart_Game : "res/IntroIconStartGame.png",
+    VolumeOn_Game:"res/VolumeOn.png",
+    VolumeOff_Game:"res/VolumeOff.png",
 };
 var g_resources = [];
 for (var i in res) {
