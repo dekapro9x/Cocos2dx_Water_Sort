@@ -3,7 +3,24 @@ var MenuLeverEasy = [
         id: 1,
         lever: "1",
         winGame: false,
-        lockLever: false
+        lockLever: false,
+        WaterBottles: [
+            {
+                color: [{
+                    red: 30,
+                    yellow: 70
+                }]
+            },
+            {
+
+            },
+            {
+
+            },
+            {
+
+            }
+        ]
     },
     {
         id: 2,
