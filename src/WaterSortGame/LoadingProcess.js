@@ -38,7 +38,7 @@ var LoadingProcessStartGameLayer = cc.Layer.extend({
     },
     update: function () {
         this.count++;
-        if (this.count > 100) {
+        if (this.count > 10) {
             this.count = 0;
             this.actionsChangeSceneStartPlayGame();
         }

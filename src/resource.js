@@ -9,6 +9,10 @@ var res = {
     IntroIconStart_Game : "res/IntroIconStartGame.png",
     VolumeOn_Game:"res/VolumeOn.png",
     VolumeOff_Game:"res/VolumeOff.png",
+    HexaBtnPlay_Game :"res/HexaButotnPlay.png",
+    GoBackScene_Game : "res/GoBack.png",
+    LeverDifficultySelectBackground_Game:"res/DifficultySelectBackground.jpg",
+    RankSelect_Game: "res/RankGame.png"
 };
 var g_resources = [];
 for (var i in res) {

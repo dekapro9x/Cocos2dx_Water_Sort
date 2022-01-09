@@ -15,8 +15,12 @@
         "src/resource.js",
         "src/app.js",
         "src/configGame/index.js",
+        "src/configGame/MenuLeverEasy.js",
+
         "src/WaterSortGame/IntroGame.js",
         "src/WaterSortGame/LoadingProcess.js",
-        "src/WaterSortGame/SceneStarGame.js"
+        "src/WaterSortGame/SceneStarGame.js",
+        "src/WaterSortGame/LeverDifficultySelect.js",
+        "src/WaterSortGame/MapLeverPlayGame.js"
     ]
 }

@@ -55,6 +55,16 @@ var SceneStarGameLayer = cc.Layer.extend({
         this.addChild(this.ImgIconIntroGame, 0);
         //Nút điều chỉnh bật tắt âm thanh:
         this.addIconVolume();
+        //Nút bắt đầu game lục giác:
+        this.buttonHexaBtnPlay = new ccui.Button();
+        this.buttonHexaBtnPlay.loadTextures(res.HexaBtnPlay_Game);
+        this.buttonHexaBtnPlay.setName("HexaBtnPlay_Game")
+        this.buttonHexaBtnPlay.x = 480;
+        this.buttonHexaBtnPlay.y = 240;
+        this.buttonHexaBtnPlay.scaleX = 0.2;
+        this.buttonHexaBtnPlay.scaleY = 0.2;
+        this.addChild(this.buttonHexaBtnPlay, 0);
+        this.buttonHexaBtnPlay.addTouchEventListener(this.pressButtonHexaBtnPlay, this);
     },
     addIconVolume: function (mucsicPlay = this.mucsicPlay) {
         this.buttonPlayMusic = new ccui.Button();
@@ -83,11 +93,27 @@ var SceneStarGameLayer = cc.Layer.extend({
                 break;
         }
     },
+    //Ấn vào nút bắt đầu game hình lục giác:
+    pressButtonHexaBtnPlay: function (sender, type) {
+        switch (type) {
+            case 0:
+                break;
+            case 1:
+                break;
+            case 2:
+                this.actionsChangeScene();
+                break;
+        }
+    },
     //Thay đổi ảnh icon bật tắt nhạc nền:
     handleIconMucsic: function () {
         this.removeChild(this.buttonPlayMusic, true);
         this.mucsicPlay = !this.mucsicPlay;
         this.addIconVolume(this.mucsicPlay);
+    },
+    //Chuyển cảnh:
+    actionsChangeScene: function () {
+        cc.director.runScene(new LeverDifficultySelectLayer());
     }
 });
 
